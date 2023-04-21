@@ -22,6 +22,7 @@ const WrapperLeft = styled.div`
 
 const WrapperRight = styled.div`
     max-width: 376px;
+    min-width: 376px;
     display: flex;
     flex-direction:column;
     gap:20px;
@@ -45,6 +46,8 @@ const WrapperLeftTop = styled.div`
 const WrapperLeftBottom = styled.div`
     display: flex;
     gap: 37px;
+    padding-right:32px;
+    box-sizing: border-box;
 `
 
 

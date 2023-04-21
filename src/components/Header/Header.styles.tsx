@@ -57,7 +57,13 @@ const SearchBar = styled.div`
     border-radius: 5px;
     width: 535px;
     padding: 11px 16px;
-
+    input[type="text"] {
+        border: none;
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
 `
 const ContentWrapper = styled.div`
     display: flex;
