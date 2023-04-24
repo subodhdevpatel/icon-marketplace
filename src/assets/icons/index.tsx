@@ -7,3 +7,8 @@ export { PencilIcon } from './PencilIcon'
 export { AssetsLib } from './AssetsLib'
 export { FlatIcon } from './FlatIcon'
 export { ArcIcon } from './ArcIcon'
+export { ExpandIcon } from './ExpandIcon'
+export { CloseIcon } from './CloseIcon';
+export { CheckIcon } from './CheckIcon';
+export { UnlockIcon } from './UnlockIocn';
+// export { DownloadIcon } from './DownloadIcon';
