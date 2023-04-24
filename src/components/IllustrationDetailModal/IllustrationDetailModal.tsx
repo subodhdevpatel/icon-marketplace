@@ -5,7 +5,7 @@ import { ColorOptions } from "../ColorEditor/Colors.data";
 
 import Styles from "./IllustrationDetailModal.styles";
 import { useCallback, useState } from "react";
-import { ExpandIcon, CloseIcon, CheckIcon, UnlockIcon, PencilIcon } from "assets/icons";
+import { ExpandIcon, CloseIcon, CheckIcon, UnlockIcon, PencilIcon, DownloadModalIcon,IconInfo } from "assets/icons";
 
 /**
  * Component - IllustrationDetailModal
@@ -14,7 +14,6 @@ const IllustrationDetailModal = () => {
   const [activeColor, setActiveColor] = useState(ColorOptions[0])
   const [imageType, setImageType] = useState('svg')
 
-  console.log('imageType', imageType)
   const downloadSvg = () => {
     const data = (document.getElementById('svgData')?.firstChild as HTMLElement)
     console.log('data', data)
@@ -61,9 +60,25 @@ const IllustrationDetailModal = () => {
                 <Styles.Input type="number" placeholder="1000 px"></Styles.Input>
               </Styles.RadioWrap>
             </Styles.MainWrap>
-            {/* <Styles.Button onClick={downloadSvg}> <DownoadIcon /> Download</Styles.Button> */}
-            <Styles.Tags></Styles.Tags>
-            <Styles.Information></Styles.Information>
+            <Styles.Button onClick={downloadSvg}> <DownloadModalIcon /> Download</Styles.Button>
+            <Styles.Tags>
+                <h5 className="text-base font-bold mb-2">Tags</h5>
+                <div className="flex flex-wrap gap-2">
+                  <span className="underline text-sm text-[#141414]">success </span>
+                  <span className="underline text-sm text-[#141414]">business </span>
+                  <span className="underline text-sm text-[#141414]">travel </span>
+                  <span className="underline text-sm text-[#141414]">exploration </span>
+                  <span className="underline text-sm text-[#141414]">creative </span>
+                  <span className="underline text-sm text-[#141414]">dream </span>
+                  <span className="underline text-sm text-[#141414]">man </span>
+                  <span className="underline text-sm text-[#141414]">happy </span>
+                  <span className="underline text-sm text-[#141414]">essential </span>
+                  <span className="underline text-sm text-[#141414]">competition </span>
+                </div>
+            </Styles.Tags>
+            <Styles.Information>
+            <IconInfo /> Commercial use license | Free PNG license attribution required
+            </Styles.Information>
           </Styles.ContentWrapper>
         </Styles.WrapperLeft>
         <Styles.WrapperRight>

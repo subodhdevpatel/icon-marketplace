@@ -1,15 +1,19 @@
 import styled from "styled-components";
 
 const Wrapper = styled.nav`
-    width: 1600px;
+width: 100%;
+padding: 0 60px;
     height: 113px;
     display: flex;
     align-items: center;
     margin: 0 auto;
-    padding: 0 20px;
     justify-content: space-between;
-    @media screen and (max-width: 1024px) {
-        width: 768px;
+    @media (min-width: 1600px) {
+        padding: 0 140px;
+
+    }
+    @media screen and (max-width: 991px) {
+        padding: 0 24px;
     }
 `
 

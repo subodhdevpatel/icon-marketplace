@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  width: 1600px;
+  padding: 0 60px;
+  width: 100%;
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -10,21 +11,22 @@ const Wrapper = styled.div`
     justify-content: space-between;
     position: relative;
 
-    @media screen and (max-width: 1024px) {
-        width: 768px;
+    @media screen and (min-width: 1600px) {
+      padding: 0 140px;
+
     }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 991px) {
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
-        padding: 50px 20px;
+        padding: 50px 24px;
     }
 `;
 
 const Content = styled.div`
   display: flex;
   gap: 24px;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 991px) {
         flex-direction: column;
     }
 `;

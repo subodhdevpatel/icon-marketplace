@@ -2,18 +2,24 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
     display: flex;
-    width: 1600px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
-    padding: 95px 20px;
-    @media screen and (max-width: 1024px) {
-        width: 768px;
+    padding: 50px 60px;
+    flex-direction: row;
+    @media (min-width: 1600px) {
+        padding: 95px 140px;
+        flex-direction: row;
+
+    }
+    @media screen and (max-width: 1199px) {
+        padding: 50px 60px;
         flex-direction: column;
     }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 991px) {
         width: 100%;
-        padding: 50px 20px;
-    }
+        padding: 50px 24px;
+        }
 `
 
 const WrapperLeft = styled.div`
@@ -29,8 +35,11 @@ const WrapperRight = styled.div`
     position: sticky;
     top: 0;
     z-index: 9;
-    @media (max-width: 1024px) {
+
+
+    @media (max-width: 1199px) {
      max-width: 100%;
+     margin-top: 24px;
      width: 100%;
     }
 `
@@ -38,7 +47,7 @@ const WrapperRight = styled.div`
 const WrapperLeftTop = styled.div`
     margin-bottom: 42px;
     display: flex;
-    @media (max-width: 1024px) {
+    @media (max-width: 1199px) {
       flex-direction: column;
     }
 `
@@ -52,8 +61,11 @@ const WrapperLeftBottom = styled.div`
 
 
 const ImageWrapper = styled.div`
-    width: 590px;
+    width: 390px;
     height: auto;
+    @media screen and (min-width: 1600px) {
+        width: 590px;
+    }
 `
 
 const DownloadWrapper = styled.div`
@@ -189,7 +201,10 @@ const ServicerWrap = styled.div`
 `
 
 const ImageContent = styled.div`
-    max-width: 590px;
+    max-width: 390px;
+    @media (min-width: 1600px) {
+        max-width: 590px;
+    }
     @media (max-width: 1024px) {
         order: 0;
     }

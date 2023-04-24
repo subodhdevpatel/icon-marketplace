@@ -6,18 +6,31 @@ const Wrapper = styled.div`
     border: 1px solid #E2E2E2;
     border-radius: 40px;
     display: flex;
+    @media (max-width: 1199px) {
+      flex-direction: column;
+    }
+    
 `;
 
 const PreviewWrapper = styled.div`
     width: 100%;
     padding: 0 140px;
+    @media (max-width: 1199px) {
+      padding: 0 60px;
+    }
+    @media (max-width: 991px) {
+      padding: 0 24px;
+    }
 `
 
 const WrapperLeft = styled.div`
   display: flex;
   padding: 36px;
   flex: 1;
-
+  @media screen and (max-width: 767px) {
+      flex-direction: column;
+      padding: 24px;
+  }
 `;
 
 const WrapperRight = styled.div`
@@ -32,6 +45,11 @@ const WrapperRight = styled.div`
   align-items: center;
   padding: 0 32px;
   position: relative;
+    @media screen and (max-width: 1199px) {
+      max-width: 100%;
+      padding: 24px;
+      border-radius: 0 0 40px 40px;
+    }
 `;
 
 const ImgWrapper = styled.div`
@@ -40,6 +58,11 @@ const ImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (min-width: 1600px) {
+    width: 572px;
+    min-width: 572px;
+    height: 572px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -71,20 +94,23 @@ const DownloadOptions = styled.div`
         margin-bottom: 12px;
 `;
 
-const RadioGroup = styled.input``;
+const RadioGroup = styled.input`
+    margin-right: 6px;
+`;
 
 const Label = styled.label`
-font: normal normal normal 16px/30px Poppins;
-letter-spacing: 0.15px;
-color: #000000;
-display: flex;
-align-items: center;
-gap: 8px;
-span {
-  font: normal normal normal 16px/30px Poppins;
-  letter-spacing: 0.15px;
-  color: #919191;
-}
+    font: normal normal normal 16px/30px Poppins;
+    letter-spacing: 0.15px;
+    color: #000000;
+    display: flex;
+    margin-right: 6px;
+    align-items: center;
+    gap: 8px;
+    span {
+      font: normal normal normal 16px/30px Poppins;
+      letter-spacing: 0.15px;
+      color: #919191;
+    }
 `;
 
 const Input = styled.input``;
@@ -104,9 +130,25 @@ const Button = styled.button`
     margin-bottom: 32px;
     `;
 
-const Tags = styled.div``;
+const Tags = styled.div`
+font: normal normal 600 16px/24px Poppins;
+letter-spacing: 0px;
+color: #141414;
+`;
 
-const Information = styled.div``;
+const Information = styled.div`
+  font: normal normal normal 10px/18px Poppins;
+  letter-spacing: 0.11px;
+  color: #707070;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  @media (min-width: 1600px) {
+    margin-top: 32px;
+    font: normal normal normal 12px/31px Poppins;
+  }
+`;
 
 const ButtonWrapper = styled.div`
   position: absolute;
