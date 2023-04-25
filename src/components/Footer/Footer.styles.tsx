@@ -1,30 +1,34 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  box-sizing: border-box;
-  width: 1600px;
+    box-sizing: border-box;
+    padding: 0 60px;
+    width: 100%;
     display: flex;
     align-items: center;
     margin: 0 auto;
     padding: 90px 20px;
     justify-content: space-between;
     position: relative;
+    margin-top: 50px;
 
-    @media screen and (max-width: 1024px) {
-        width: 768px;
+    @media screen and (min-width: 1600px) {
+      padding: 90px 140px;
+
+
     }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 991px) {
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
-        padding: 50px 20px;
+        padding: 50px 24px;
     }
 `;
 
 const Content = styled.div`
   display: flex;
   gap: 24px;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 991px) {
         flex-direction: column;
     }
 `;
@@ -59,7 +63,7 @@ const Logo = styled.div`
 `;
 
 const CopyrightText = styled.div`
-  text-align: ritgh;
+  text-align: right;
   font: normal normal normal 14px/35px;
   color: #ffffff;
   margin-top: 18px;

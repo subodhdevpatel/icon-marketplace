@@ -34,7 +34,7 @@ export const Footer = () => {
             <Styles.ContentLink>Contact us</Styles.ContentLink>
             <Styles.ContentLink>Affiliate Program</Styles.ContentLink>
             <Styles.ContentLink>Request Custom Icons</Styles.ContentLink>
-            <Styles.ContentLink>Give us ideasy</Styles.ContentLink>
+            <Styles.ContentLink>Give us ideas</Styles.ContentLink>
           </Styles.ContentContainer>
         </Styles.Content>
         <Styles.LogoContainer>
@@ -42,7 +42,7 @@ export const Footer = () => {
             <Image src={Footer_Logo} alt="" />
           </Styles.Logo>
           <Styles.CopyrightText>
-            ©2019 All rights reserved Vectopus.com
+            ©2023 All rights reserved Vectopus.com
           </Styles.CopyrightText>
         </Styles.LogoContainer>
       </Styles.Wrapper >

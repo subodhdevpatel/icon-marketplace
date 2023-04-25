@@ -1,10 +1,9 @@
 import { useState, useCallback, useRef, MutableRefObject } from "react"
 
-import Styles from "./CreditDownload.styles"
 import { DownloadIcon, ArrowIcon } from 'assets/icons'
 import { useOnClickOutside } from "hooks/useOnClickOutside";
 
-// import Download
+import Styles from "./CreditDownload.styles"
 
 /**
  * Component - CreditDownload

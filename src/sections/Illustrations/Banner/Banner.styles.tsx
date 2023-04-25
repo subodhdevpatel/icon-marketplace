@@ -2,22 +2,35 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
     display: flex;
-    width: 1600px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
-    padding: 95px 20px;
-    @media screen and (max-width: 1024px) {
-        width: 768px;
+    padding: 50px 60px;
+    flex-direction: row;
+    @media (min-width: 1600px) {
+        padding: 95px 140px;
+        flex-direction: row;
+
+    }
+    @media screen and (max-width: 1366px) {
+        padding: 50px 60px;
         flex-direction: column;
     }
-    @media screen and (max-width: 767px) {
-        width: 100%;
-        padding: 50px 20px;
+    @media screen and (max-width: 1199px) {
+        padding: 50px 60px;
+        flex-direction: column;
     }
+    @media screen and (max-width: 991px) {
+        width: 100%;
+        padding: 50px 24px;
+        }
 `
 
 const WrapperLeft = styled.div`
-   flex: 1;
+   width: calc(100% - 376px);
+   @media (max-width: 1365px){
+    width: 100%;
+   }
 `
 
 const WrapperRight = styled.div`
@@ -29,16 +42,21 @@ const WrapperRight = styled.div`
     position: sticky;
     top: 0;
     z-index: 9;
-    @media (max-width: 1024px) {
+
+    @media (max-width: 1199px) {
      max-width: 100%;
+     margin-top: 24px;
      width: 100%;
+    }
+    @media (max-width: 991px) {
+        min-width: unset;
     }
 `
 
 const WrapperLeftTop = styled.div`
     margin-bottom: 42px;
     display: flex;
-    @media (max-width: 1024px) {
+    @media (max-width: 1199px) {
       flex-direction: column;
     }
 `
@@ -48,12 +66,22 @@ const WrapperLeftBottom = styled.div`
     gap: 37px;
     padding-right:32px;
     box-sizing: border-box;
+    @media (max-width: 767px) {
+        flex-direction: column;
+        padding-right: 0;
+    }
 `
 
 
 const ImageWrapper = styled.div`
-    width: 590px;
+    width: 390px;
     height: auto;
+    @media screen and (min-width: 1600px) {
+        width: 590px;
+    }
+    @media screen and (max-width: 767px) {
+        width: 100%;
+    }
 `
 
 const DownloadWrapper = styled.div`
@@ -81,6 +109,10 @@ const IconWrapper = styled.div`
     align-items: center;
     gap:20px;
     margin-bottom: 40px;
+    @media (max-width: 991px) {
+        gap: 15px;
+        margin-bottom: 24px;
+    }
 `
 
 const ImgWrap = styled.div`
@@ -131,15 +163,33 @@ const HeaderText = styled.h2`
     line-height: 69px;
     font-weight: bold;
     margin-bottom: 7px;
+    @media screen and (max-width: 991px) {
+        font-size:38px;
+        line-height: 49px;
+        margin-top: 24px;
+    }
+    @media screen and (max-width: 767px) {
+        font-size:28px;
+        line-height: 31px;
+    }
 `
 const SubText = styled.h5`
     color: #000000;
     font-size:30px;
     line-height: 69px;
     font-weight: 600;
+    @media screen and (max-width: 991px) {
+        font-size:26px;
+        line-height: 38px;
+        margin-bottom: 7px;
+    }
+    @media screen and (max-width: 768px) {
+        font-size:20px;
+        line-height: 26px;
+    }
 `
 
-const UnlimateAccessWrapper = styled.div`
+const UltimateAccessWrapper = styled.div`
     display: flex;
     align-items: center;
     background: #3C8CF3 0% 0% no-repeat padding-box;
@@ -148,6 +198,9 @@ const UnlimateAccessWrapper = styled.div`
     padding: 24px;
     gap: 16px;
     font: normal normal 600 16px/21px Poppins;
+    @media (max-width: 767px) {
+        font: normal normal 600 14px/21px Poppins;
+    }
 `
 const ContentDesc = styled.h4`
    color: #000000;
@@ -155,6 +208,9 @@ const ContentDesc = styled.h4`
     line-height: 29px;
     font-weight: 600;
     margin-bottom: 24px;
+    @media (max-width: 767px) {
+        font-size: 18px; line-height: 26px;
+    }
 `
 const ParaContent = styled.p`
      color: #000000;
@@ -162,6 +218,9 @@ const ParaContent = styled.p`
     line-height: 21px;
     font-weight: 500;
     margin-bottom: 24px;
+    @media (max-width: 767px) {
+        font-size: 14px;
+    }
 `
 const CompareWrapper = styled.div`
     background: #EAF5E7 0% 0% no-repeat padding-box;
@@ -189,9 +248,16 @@ const ServicerWrap = styled.div`
 `
 
 const ImageContent = styled.div`
-    max-width: 590px;
-    @media (max-width: 1024px) {
+    max-width: 390px;
+    @media (min-width: 1600px) {
+        max-width: 590px;
+    }
+    @media (max-width: 1199px) {
         order: 0;
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
     }
 `
 
@@ -227,11 +293,17 @@ const CompatibleText = styled.div`
         font-size: 14px;
         letter-spacing: 0.13px;
         color: #7E7E7E;
+        margin-bottom: 3px;
     }
      p {
         font: normal normal medium 14px/21px Poppins;
         color: #000000;
         margin-bottom: 25px;
+        @media (max-width: 991px) {
+            font-size: 13px;
+            line-height: 18px;
+            margin-bottom: 12px;
+        }
      }
 `
 
@@ -271,7 +343,7 @@ const Styles = {
     ImageWrapper,
     DownloadWrapper,
     DownloadText,
-    UnlimateAccessWrapper,
+    UltimateAccessWrapper,
     ContentWrapper,
     IconWrapper,
     ImgWrap,

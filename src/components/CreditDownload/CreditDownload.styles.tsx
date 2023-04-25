@@ -6,8 +6,14 @@ const Wrapper = styled.div`
     user-select: none;
 `
 
-const DownloadText = styled.span`
-
+const DownloadText = styled.div`
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+    @media (max-width: 991px) {
+        font-size: 14px;
+        line-height: 22px;
+    }
 `
 
 const DownloadOptions = styled.div`
@@ -18,6 +24,7 @@ const DownloadOptions = styled.div`
     margin-top: 20px;
     border-radius: 6px;
     padding: 4px;
+    z-index: 999;
 `
 
 const DownloadOption = styled.div`
@@ -25,6 +32,10 @@ const DownloadOption = styled.div`
     padding: 16px;
     font-size: 18px;
     font-weight: bold;
+    @media (max-width: 991px) {
+        font-size: 16px;
+        line-height: 22px;
+    }
 `
 
 const DownloadWrapper = styled.div`
@@ -33,12 +44,18 @@ const DownloadWrapper = styled.div`
     background: #000000 0% 0% no-repeat padding-box;
     border-radius: 10px;
     padding: 24px;
+    min-width: max-content;
     font: normal normal 600 20px/26px;
     color: #FFFFFF;
     gap: 16px;
+    @media (max-width: 991px) {
+        font-size: 18px;
+        line-height: 22px;
+    }
     span {
-     font: normal normal 600 11px/26px ;
-    color: #FFFFFF;
+        font-size: 12px ;
+        color: #FFFFFF;
+        font-weight: bold;
     }
 
 `
