@@ -7,7 +7,12 @@ const Wrapper = styled.div`
 `
 
 const DownloadText = styled.span`
-
+    font-size: 18px;
+    line-height: 22px;
+    @media (max-width: 991px) {
+        font-size: 14px;
+    line-height: 22px;
+    }
 `
 
 const DownloadOptions = styled.div`
@@ -25,6 +30,10 @@ const DownloadOption = styled.div`
     padding: 16px;
     font-size: 18px;
     font-weight: bold;
+    @media (max-width: 991px) {
+        font-size: 16px;
+    line-height: 22px;
+    }
 `
 
 const DownloadWrapper = styled.div`
@@ -36,8 +45,12 @@ const DownloadWrapper = styled.div`
     font: normal normal 600 20px/26px;
     color: #FFFFFF;
     gap: 16px;
+    @media (max-width: 991px) {
+        font-size: 18px;
+    line-height: 22px;
+    }
     span {
-     font: normal normal 600 11px/26px ;
+     font-size: 12px ;
     color: #FFFFFF;
     }
 

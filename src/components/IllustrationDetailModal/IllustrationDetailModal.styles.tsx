@@ -63,6 +63,11 @@ const ImgWrapper = styled.div`
     min-width: 572px;
     height: 572px;
   }
+  @media (max-width: 991px) {
+
+    height: auto;
+    margin-bottom: 24px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -156,7 +161,10 @@ const ButtonWrapper = styled.div`
   right: 30px; 
   display: flex;
   gap: 18px;  
- 
+  @media screen and (max-width: 991px) {
+    top: 10px;
+    right: 10px; 
+  }
 `;
 
 const FullScreenButton = styled.button``;
@@ -172,6 +180,9 @@ const TitleText = styled.div`
   font: normal normal bold 20px/26px Poppins;
   color: #000000;
   margin-bottom: 21px;
+  @media screen and (max-width: 991px) {
+    font: normal normal bold 18px/26px Poppins;
+  }
 `;
 
 const DescriptionText = styled.div`
@@ -218,12 +229,21 @@ const RadioWrap = styled.div `
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #DFDFDF;
     border-radius: 4px;
-   }
+    
+   @media screen and (max-width: 767px) {
+    input[type="number"] {
+      width:100%;
+    }
+  }
 `
 
 const MainWrap = styled.div `
   display: flex;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 

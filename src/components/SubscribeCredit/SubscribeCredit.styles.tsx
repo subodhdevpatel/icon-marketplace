@@ -14,21 +14,22 @@ padding: 100px 140px;
     padding: 40px 60px;
     flex-direction: column;
 }
+@media screen and (max-width: 991px) {
+    padding: 24px;
+    flex-direction: column;
+}
 `
 
 const WrapperLeft = styled.div`
 font: normal normal bold 128px/36px Poppins;
-letter-spacing: -10.9px;
 color: #F6F6F6;
     @media screen and (min-width: 1600px) {
      font: normal normal bold 218px/36px Poppins;
-     letter-spacing: -10.9px;
      color: #F6F6F6;
  }
 
- @media screen and (max-width: 1024px) {
-        font-size: 56px;
-     
+ @media screen and (max-width: 991px) {
+        font-size: 60px;
  }
 
 `
@@ -36,6 +37,7 @@ color: #F6F6F6;
 const WrapperRight = styled.div`
     display: flex;
     flex:1;
+    position: relative;
     justify-content: flex-end;
     @media screen and (max-width: 991px) {
         flex-direction: column;
@@ -50,6 +52,7 @@ const AccessWrap =styled.div`
     padding: 46px;
     flex: 1;
     justify-content: flex-end;
+    
     @media screen and (max-width: 1199px) {
         padding: 24px;
     }   
@@ -89,9 +92,17 @@ const SubcribeWrap = styled.div `
     display: flex;
     background: #000000 0% 0% no-repeat padding-box;
     border-radius: 142px 50px 50px 142px;
+    margin-left: 100px;
     padding: 46px;
+    position: relative;
     @media screen and (max-width: 1199px) {
         padding: 24px;
+
+    }
+    @media screen and (max-width: 991px) {
+        padding: 24px;
+        margin-left: 0;
+        
     }
 
 `

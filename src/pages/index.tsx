@@ -5,6 +5,7 @@ import { Banner } from 'sections/Illustrations/Banner/Banner'
 import {SubscribeCredit} from 'components/SubscribeCredit/SubscribeCredit'
 import { SameStyleIllustration } from 'sections/Illustrations/SameStyleIllustration/SameStyleIllustration'
 import { Services } from 'sections/Illustrations/Services/Services'
+import { MatchingIcons } from 'sections/Illustrations/MatchingIcons/MatchingIcons'
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
       <IllustrationDetailModal />
       <SubscribeCredit />
       <Services />
+      <MatchingIcons />
+      <SameStyleIllustration />
       <Footer />
     </div>
   )

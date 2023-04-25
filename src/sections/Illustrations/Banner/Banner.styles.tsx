@@ -36,11 +36,13 @@ const WrapperRight = styled.div`
     top: 0;
     z-index: 9;
 
-
     @media (max-width: 1199px) {
      max-width: 100%;
      margin-top: 24px;
      width: 100%;
+    }
+    @media (max-width: 991px) {
+        min-width: unset;
     }
 `
 
@@ -57,6 +59,10 @@ const WrapperLeftBottom = styled.div`
     gap: 37px;
     padding-right:32px;
     box-sizing: border-box;
+    @media (max-width: 767px) {
+        flex-direction: column;
+        padding-right: 0;
+    }
 `
 
 
@@ -65,6 +71,9 @@ const ImageWrapper = styled.div`
     height: auto;
     @media screen and (min-width: 1600px) {
         width: 590px;
+    }
+    @media screen and (max-width: 767px) {
+        width: 100%;
     }
 `
 
@@ -143,12 +152,30 @@ const HeaderText = styled.h2`
     line-height: 69px;
     font-weight: bold;
     margin-bottom: 7px;
+    @media screen and (max-width: 991px) {
+        font-size:38px;
+        line-height: 49px;
+        margin-top: 24px;
+    }
+    @media screen and (max-width: 767px) {
+        font-size:28px;
+        line-height: 31px;
+    }
 `
 const SubText = styled.h5`
     color: #000000;
     font-size:30px;
     line-height: 69px;
     font-weight: 600;
+    @media screen and (max-width: 991px) {
+        font-size:26px;
+        line-height: 38px;
+        margin-bottom: 7px;
+    }
+    @media screen and (max-width: 768px) {
+        font-size:20px;
+        line-height: 26px;
+    }
 `
 
 const UnlimateAccessWrapper = styled.div`
@@ -160,6 +187,9 @@ const UnlimateAccessWrapper = styled.div`
     padding: 24px;
     gap: 16px;
     font: normal normal 600 16px/21px Poppins;
+    @media (max-width: 767px) {
+        font: normal normal 600 14px/21px Poppins;
+    }
 `
 const ContentDesc = styled.h4`
    color: #000000;
@@ -167,6 +197,9 @@ const ContentDesc = styled.h4`
     line-height: 29px;
     font-weight: 600;
     margin-bottom: 24px;
+    @media (max-width: 767px) {
+        font-size: 18px; line-height: 26px;
+    }
 `
 const ParaContent = styled.p`
      color: #000000;
@@ -174,6 +207,9 @@ const ParaContent = styled.p`
     line-height: 21px;
     font-weight: 500;
     margin-bottom: 24px;
+    @media (max-width: 767px) {
+        font-size: 14px; 
+    }
 `
 const CompareWrapper = styled.div`
     background: #EAF5E7 0% 0% no-repeat padding-box;

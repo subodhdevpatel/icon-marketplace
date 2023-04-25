@@ -13,15 +13,16 @@ const Wrapper = styled.div`
         padding: 24px;
     }
 
+
 `;
 const HeadingWrapper = styled.div`
-  
+
     font: normal normal bold 32px/41px Poppins;
     letter-spacing: -0.23px;
     color: #000000;
     margin-bottom: 41px;
     @media (min-width: 1600px) {
-        font: normal normal 900 35px/71px Poppins;
+        font: normal normal bold 35px/71px Poppins;
         margin-bottom: 61px;
     }
     @media (max-width: 1199px) {
@@ -33,20 +34,22 @@ const HeadingWrapper = styled.div`
         margin-bottom: 24px;
     }
 `;
-const CardWrapper = styled.div`
-display: flex;
-flex-wrap: wrap;
-gap: 32px;
-@media (max-width: 991px) {
-    gap: 24px;
-}
-`;
+const CardWrapper = styled.div``;
 
+const CardIconWrap = styled.div `
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    @media (max-width: 991px) {
+        gap: 24px;
+    }
+`;
 
 const Styles = {
     Wrapper,
     HeadingWrapper,
-    CardWrapper
+    CardWrapper,
+    CardIconWrap
 }
 
 export default Styles

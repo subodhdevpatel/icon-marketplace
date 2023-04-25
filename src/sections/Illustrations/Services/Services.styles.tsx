@@ -3,12 +3,16 @@ import styled from "styled-components";
 const Wrapper = styled.div`
     padding: 0 60px;
     width: 100%;
+    margin: 80px 0; 
+
     @media screen and (min-width: 1600px) {
+        margin: 100px 0; 
         padding: 0 140px;
     }
     @media (max-width: 991px) {
         padding: 0 24px;
         gap: 24px;
+        margin: 30px 0;
     }
 
 `
@@ -142,6 +146,9 @@ const ServiveAds = styled.div `
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    img {
+        margin: 0 auto;
+    }
     @media screen and (max-width: 991px) {
         flex-direction: column;
         gap: 24px;
