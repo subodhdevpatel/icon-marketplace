@@ -7,8 +7,7 @@ export const MatchingIcons = () => {
     const [iconSets, setIconSets] = useState([])
     useEffect(() => {
         const fetch = async () => {
-            const response = await axios.get("https://api.vectopus.com/api/set/type/icon/0/4")
-            console.log('response', response)
+            const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_API}/set/type/icon/0/4`)
             if (response.data.sets) {
                 setIconSets(response.data.sets)
             }
@@ -17,12 +16,12 @@ export const MatchingIcons = () => {
     }, [])
     return (
         <Styles.Wrapper>
-        <Styles.HeadingWrapper>Icons to Match &gt; </Styles.HeadingWrapper>
-         <Styles.CardIconWrap>
-            {iconSets.map(({_id, name, liked, items}) => 
-                <IconsCard id={_id} title={name} imageUrl='' count={items.length} isLiked={liked} />
-            )}   
+            <Styles.HeadingWrapper>Icons to Match &gt; </Styles.HeadingWrapper>
+            <Styles.CardIconWrap>
+                {iconSets.map(({ _id, name, liked, items }) =>
+                    <IconsCard key={_id} id={_id} title={name} imageUrl='' count={items["length"]} isLiked={liked} />
+                )}
             </Styles.CardIconWrap>
         </Styles.Wrapper>
     )
-}   
+}

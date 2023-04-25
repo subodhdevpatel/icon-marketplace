@@ -7,8 +7,7 @@ export const SameStyleIllustration = () => {
     const [illustrationSets, setIllustrationSets] = useState([])
     useEffect(() => {
         const fetch = async () => {
-            const response = await axios.get(" https://api.vectopus.com/api/set/type/illustration/0/4")
-            console.log('response illustration', response)
+            const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_API}/set/type/illustration/0/4`)
             if (response.data.sets.length > 0) {
                 setIllustrationSets(response.data.sets)
             }
@@ -17,13 +16,13 @@ export const SameStyleIllustration = () => {
     }, [])
     return (
         <Styles.Wrapper>
-        <Styles.HeadingWrapper>Same style illustrations &gt; </Styles.HeadingWrapper>
-        <Styles.CardWrapper>
-            {illustrationSets.map(({_id, name, items}) => 
-            <SampleIllustrationCard key={_id} title={name} count={items?.length} imageUrl=''/>
-        )
-}
-        </Styles.CardWrapper>
+            <Styles.HeadingWrapper>Same style illustrations &gt; </Styles.HeadingWrapper>
+            <Styles.CardWrapper>
+                {illustrationSets.map(({ _id, name, items }) =>
+                    <SampleIllustrationCard key={_id} title={name} count={items["length"]} imageUrl='' />
+                )
+                }
+            </Styles.CardWrapper>
         </Styles.Wrapper>
     )
-}   
+}

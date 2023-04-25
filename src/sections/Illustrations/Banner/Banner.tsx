@@ -63,10 +63,10 @@ export const Banner = () => {
             </Styles.WrapperLeft>
             <Styles.WrapperRight>
                 <CreditDownload />
-                <Styles.UnlimateAccessWrapper>
+                <Styles.UltimateAccessWrapper>
                     <LockUnlockedIcon />
                     Ultimate access download
-                </Styles.UnlimateAccessWrapper>
+                </Styles.UltimateAccessWrapper>
                 <Styles.CompareWrapper>
                     <Styles.IllustrationsCount>
                         {`${89} Illustrations`}

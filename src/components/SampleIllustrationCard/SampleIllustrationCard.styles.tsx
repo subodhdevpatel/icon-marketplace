@@ -41,12 +41,12 @@ letter-spacing: 0.19px;
 color: #000000;
 text-overflow: ellipsis;
 overflow:hidden;
-white-space: nowrap;  
+white-space: nowrap;
 @media (min-width: 1600px) {
     font: normal bold 20px/28px Poppins;
 }
 @media screen (max-width: 991px) {
-    font: normal bold 16pxpx/22px Poppins;
+    font: normal bold 16px/22px Poppins;
 }
 `;
 

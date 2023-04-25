@@ -7,7 +7,7 @@ const Wrapper = styled.div<WrapperType>`
   box-sizing: border-box;
   height: auto;
   border-radius: 10px;
-  padding: 22px; 
+  padding: 22px;
    width: calc(25% - 24px);
   background-repeat: no-repeat;
   background-position: center;
@@ -29,25 +29,47 @@ const Wrapper = styled.div<WrapperType>`
     }
 `;
 
+const FreeTag = styled.div`
+  width: 38px;
+  height: 18px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  background: #00CBD0 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const Title = styled.p`
     font: normal bold 18px/26px Poppins;
     letter-spacing: 0.19px;
     color: #000000;
-    @media (min-width: 1600px) {
-        font: normal bold 20px/28px Poppins;
-    }
-    @media screen (max-width: 991px) {
-        font: normal bold 16pxpx/22px Poppins;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    @media (max-width: 991px) {
+        font-size: 16px;
     }
   `;
-  
+const Tag = styled.div`
+text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 195px;
+`;
+
 const HeartIconWrapper = styled.div``;
-  
+
 const Count = styled.p`
   text-align: right;
   font: normal normal normal 16px/23px;
@@ -55,13 +77,13 @@ const Count = styled.p`
   color: #919191;
 `;
 
-const CommentWrapper = styled.div `
+const CommentWrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 16px;
 `;
 
-const ImageWrap = styled.div `
+const ImageWrap = styled.div`
     display: flex;
     justify-content: center;
 `;
@@ -70,9 +92,11 @@ const Styles = {
   Wrapper,
   Content,
   Title,
+  FreeTag,
   HeartIconWrapper,
   ImageWrap,
   CommentWrapper,
+  Tag,
   Count
 };
 

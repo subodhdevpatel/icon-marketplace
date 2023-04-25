@@ -4,7 +4,7 @@ const Wrapper = styled.div`
     padding: 80px 60px;
     background: #F4F4F4 0% 0% no-repeat padding-box;
     @media (min-width: 1600px) {
-        padding: 130px 140px;
+        padding: 130px 140px 110px;
     }
     @media (max-width: 1199px) {
         padding: 50px 60px;
@@ -36,7 +36,7 @@ const HeadingWrapper = styled.div`
 `;
 const CardWrapper = styled.div``;
 
-const CardIconWrap = styled.div `
+const CardIconWrap = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 32px;

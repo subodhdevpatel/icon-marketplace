@@ -16,30 +16,30 @@ export const Services = () => {
                     <h5>Need more customized assets</h5>
                     <h2>Custom design services</h2>
                     <h4>Tailored to your brand</h4>
-                    <p>Unique <strong>vector UI assets</strong> created to fit your branding. 
-                    For interfaces, ads, social networks, mobile apps, printing, and branding merchandise… 
-                    stand out of the competition</p>
+                    <p>Unique <strong>vector UI assets</strong> created to fit your branding.
+                        For interfaces, ads, social networks, mobile apps, printing, and branding merchandise…
+                        stand out of the competition</p>
                     <Styles.BtnStorm>
-                      Brainstorm with us
+                        Brainstorm with us
                     </Styles.BtnStorm>
                 </Styles.DesignService>
                 <Styles.ContentWrap>
-                        <Styles.ServiveAds>
-                                <Styles.Testimonial>
-                                        <Styles.Quote>
-                                        Amazing service, my illustrations got delivered exactly as specified within 1 day!
-                                        </Styles.Quote>
-                                        <Styles.UserInfo>
-                                            <Styles.UserText>
-                                            <p>Naveen Dhanapal</p> 
-                                            <p>UI/UX Designer</p>
-                                            </Styles.UserText>
-                                            <Image src={UserProfile} alt="" />
-                                        </Styles.UserInfo>
-                                </Styles.Testimonial>
-                                <Image src={FidoImg } alt="" />
-                        </Styles.ServiveAds>
-                        <Styles.ServiceContainer>
+                    <Styles.ServiceAds>
+                        <Styles.Testimonial>
+                            <Styles.Quote>
+                                Amazing service, my illustrations got delivered exactly as specified within 1 day!
+                            </Styles.Quote>
+                            <Styles.UserInfo>
+                                <Styles.UserText>
+                                    <p>Naveen Dhanapal</p>
+                                    <p>UI/UX Designer</p>
+                                </Styles.UserText>
+                                <Image src={UserProfile} alt="" />
+                            </Styles.UserInfo>
+                        </Styles.Testimonial>
+                        <Image src={FidoImg} alt="" />
+                    </Styles.ServiceAds>
+                    <Styles.ServiceContainer>
                         <Styles.ServiceBox>
                             <ImageIcon />
                             <h5>Fast delivery</h5>
@@ -55,7 +55,7 @@ export const Services = () => {
                             <h5>Custom tailored</h5>
                             <p>New assets released weekly, old assets updated daily</p>
                         </Styles.ServiceBox>
-                        </Styles.ServiceContainer>
+                    </Styles.ServiceContainer>
                 </Styles.ContentWrap>
             </Styles.ServiceWrap>
         </Styles.Wrapper>

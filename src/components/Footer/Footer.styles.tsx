@@ -1,18 +1,20 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  box-sizing: border-box;
-  padding: 0 60px;
-  width: 100%;
+    box-sizing: border-box;
+    padding: 0 60px;
+    width: 100%;
     display: flex;
     align-items: center;
     margin: 0 auto;
     padding: 90px 20px;
     justify-content: space-between;
     position: relative;
+    margin-top: 50px;
 
     @media screen and (min-width: 1600px) {
-      padding: 0 140px;
+      padding: 90px 140px;
+
 
     }
     @media screen and (max-width: 991px) {
@@ -61,7 +63,7 @@ const Logo = styled.div`
 `;
 
 const CopyrightText = styled.div`
-  text-align: ritgh;
+  text-align: right;
   font: normal normal normal 14px/35px;
   color: #ffffff;
   margin-top: 18px;

@@ -20,7 +20,7 @@ export const Select: FC<SelectType> = ({ options, handleSelect, showIcon = true 
 
     /**
      * Select the options from drop-down
-     * @params {string} id
+     * @param {string} id
      */
     const onSelect = useCallback((id: string) => {
         handleSelect(id)
@@ -31,7 +31,7 @@ export const Select: FC<SelectType> = ({ options, handleSelect, showIcon = true 
         <Styles.Wrapper ref={ref}>
             <Styles.TitleWrapper onClick={() => setShowOptions(true)}>
                 <Styles.Title>Asset Library</Styles.Title>
-                <ArrowIcon />
+                <ArrowIcon stroke="black" />
             </Styles.TitleWrapper>
             {showOptions && <Styles.OptionsWrapper onMouseLeave={() => setShowOptions(true)}>
                 {options.map(({ id, name, icon }) => (

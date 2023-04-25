@@ -4,10 +4,10 @@ const Wrapper = styled.div`
     padding: 80px 60px;
     background: #F4F4F4 0% 0% no-repeat padding-box;
     @media (min-width: 1600px) {
-        padding: 130px 140px;
+        padding: 0 140px 110px;
     }
     @media (max-width: 1199px) {
-        padding: 50px 60px;
+        padding: 0 60px 0;
     }
     @media (max-width: 767px) {
         padding: 24px;
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 
 `;
 const HeadingWrapper = styled.div`
-  
+
     font: normal normal bold 32px/41px Poppins;
     letter-spacing: -0.23px;
     color: #000000;

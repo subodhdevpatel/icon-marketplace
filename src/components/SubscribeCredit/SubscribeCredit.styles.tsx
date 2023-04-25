@@ -1,27 +1,28 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-padding: 70px 60px;
-margin: 0 auto;
-display: flex;
-align-items: center;
-justify-content: space-between;
-@media(min-width: 1600px) {
-padding: 100px 140px;
+    padding: 70px 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media(min-width: 1600px) {
+    padding: 100px 140px;
 
-}
-@media screen and (max-width: 1199px) {
-    padding: 40px 60px;
-    flex-direction: column;
-}
-@media screen and (max-width: 991px) {
-    padding: 24px;
-    flex-direction: column;
-}
+    }
+    @media screen and (max-width: 1199px) {
+        padding: 40px 60px;
+        flex-direction: column;
+    }
+    @media screen and (max-width: 991px) {
+        padding: 24px;
+        flex-direction: column;
+    }
 `
 
 const WrapperLeft = styled.div`
-font: normal normal bold 128px/36px Poppins;
+font-size: 128px;
+font-weight: bold;
 color: #F6F6F6;
     @media screen and (min-width: 1600px) {
      font: normal normal bold 218px/36px Poppins;
@@ -30,6 +31,11 @@ color: #F6F6F6;
 
  @media screen and (max-width: 991px) {
         font-size: 60px;
+        line-height: normal;
+ }
+ @media screen and (max-width: 1024px) {
+        font-size: 56px;
+        line-height: normal;
  }
 
 `
@@ -46,17 +52,17 @@ const WrapperRight = styled.div`
     }
 `
 
-const AccessWrap =styled.div`
+const AccessWrap = styled.div`
     display: flex;
     align-items: center;
     padding: 46px;
     flex: 1;
     justify-content: flex-end;
-    
+
     @media screen and (max-width: 1199px) {
         padding: 24px;
-    }   
-      
+    }
+
     div {
         width: 100%;
         text-align: right;
@@ -81,14 +87,14 @@ const AccessWrap =styled.div`
     }
     h5 {
         position: relative;
-        svg { 
+        svg {
             position: absolute;
             top: -35px;
             left: -35px;
         }
     }
 `
-const SubcribeWrap = styled.div `
+const SubscribeWrap = styled.div`
     display: flex;
     background: #000000 0% 0% no-repeat padding-box;
     border-radius: 142px 50px 50px 142px;
@@ -100,9 +106,9 @@ const SubcribeWrap = styled.div `
 
     }
     @media screen and (max-width: 991px) {
-        padding: 24px;
+        padding: 20px;
         margin-left: 0;
-        
+
     }
 
 `
@@ -111,7 +117,7 @@ const Styles = {
     Wrapper,
     WrapperLeft,
     AccessWrap,
-    SubcribeWrap,
+    SubscribeWrap,
     WrapperRight
 }
 

@@ -2,24 +2,30 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
 
-    margin: 50px auto;
+    margin: 20px auto;
     border: 1px solid #E2E2E2;
     border-radius: 40px;
     display: flex;
     @media (max-width: 1199px) {
       flex-direction: column;
+      margin: 0 auto;
     }
-    
+
 `;
 
 const PreviewWrapper = styled.div`
     width: 100%;
-    padding: 0 140px;
-    @media (max-width: 1199px) {
-      padding: 0 60px;
+    @media screen and (min-width: 767px) {
+      grid-column: span 1/span 1;
     }
-    @media (max-width: 991px) {
-      padding: 0 24px;
+    @media screen and (min-width: 991px) {
+      grid-column: span 2/span 2;
+    }
+    @media screen and (min-width: 1199px) {
+      grid-column: span 3/span 3;
+    }
+    @media screen and (min-width: 1600px) {
+      grid-column: span 4/span 4;
     }
 `
 
@@ -29,12 +35,11 @@ const WrapperLeft = styled.div`
   flex: 1;
   @media screen and (max-width: 767px) {
       flex-direction: column;
-      padding: 24px;
+      padding: 16px;
   }
 `;
 
 const WrapperRight = styled.div`
-  // flex:1;
   max-width: 373px;
   background: #DFF5DA 0% 0% no-repeat padding-box;
   mix-blend-mode: multiply;
@@ -90,6 +95,9 @@ const TitleWrapper = styled.h1`
     letter-spacing: 0.28px;
     color: #000000;
     margin: 12px 0 27px;
+    @media (max-width: 991px) {
+    font: normal normal 600 20px/28px Poppins;
+    }
 `;
 
 const DownloadOptions = styled.div`
@@ -101,6 +109,10 @@ const DownloadOptions = styled.div`
 
 const RadioGroup = styled.input`
     margin-right: 6px;
+    input[type="radio"]:checked {
+      background: red;
+    }
+
 `;
 
 const Label = styled.label`
@@ -158,12 +170,13 @@ const Information = styled.div`
 const ButtonWrapper = styled.div`
   position: absolute;
   top: 30px;
-  right: 30px; 
+  right: 30px;
   display: flex;
-  gap: 18px;  
+  gap: 18px;
   @media screen and (max-width: 991px) {
-    top: 10px;
-    right: 10px; 
+    top: 8px;
+    right: 8px;
+    gap: 8px;
   }
 `;
 
@@ -181,7 +194,7 @@ const TitleText = styled.div`
   color: #000000;
   margin-bottom: 21px;
   @media screen and (max-width: 991px) {
-    font: normal normal bold 18px/26px Poppins;
+    font: normal normal bold 16px/21px Poppins;
   }
 `;
 
@@ -192,7 +205,9 @@ const DescriptionText = styled.div`
   letter-spacing: 0.12px;
   color: #000000;
   margin-bottom: 10px;
-  gap: 6px; 
+  gap: 6px;
+  @media (max-width: 991px) {
+  }
 `;
 
 const UnlockAllButton = styled.button`
@@ -218,18 +233,23 @@ const BreadCrumbContent = styled.div`
 const HeartIcon = styled.div`
    position: absolute;
    right: 0;
-   top: 0;
+   top: 50%;
+   transform: translateY(-50%);
 `;
 
-const RadioWrap = styled.div `
+const RadioWrap = styled.div`
    display: flex;
    align-items: center;
+   input[type="radio"] {
+    accent-color: #000;
+   }
    input[type="number"] {
     width: 113px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #DFDFDF;
     border-radius: 4px;
-    
+    padding: 0 12px;
+   }
    @media screen and (max-width: 767px) {
     input[type="number"] {
       width:100%;
@@ -237,7 +257,7 @@ const RadioWrap = styled.div `
   }
 `
 
-const MainWrap = styled.div `
+const MainWrap = styled.div`
   display: flex;
   align-items: center;
   @media screen and (max-width: 767px) {
@@ -248,7 +268,7 @@ const MainWrap = styled.div `
 
 
 const Styles = {
-  Wrapper,  
+  Wrapper,
   WrapperLeft,
   WrapperRight,
   ImgWrapper,

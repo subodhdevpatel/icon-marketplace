@@ -10,7 +10,7 @@ export { ArcIcon } from './ArcIcon'
 export { ExpandIcon } from './ExpandIcon'
 export { CloseIcon } from './CloseIcon';
 export { CheckIcon } from './CheckIcon';
-export { UnlockIcon } from './UnlockIocn';
+export { UnlockIcon } from './UnlockIcon';
 export { DownloadModalIcon } from './DownloadModalIcon';
 export { OptionsArrow } from './OptionsArrow';
 export { IconInfo } from './IconInfo';
@@ -18,4 +18,3 @@ export { HeadTagIcon } from './HeadTagIcon';
 export { ImageIcon } from './ImageIcon';
 export { UsersIcon } from './UsersIcon';
 export { PackageIcon } from './PackageIcon';
-    

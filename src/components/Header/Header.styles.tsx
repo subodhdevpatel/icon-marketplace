@@ -19,6 +19,7 @@ padding: 0 60px;
 
 const LogoContainer = styled.div`
     max-width: 191px;
+    cursor: pointer;
     img {
         max-width: 100%;
         height: auto;

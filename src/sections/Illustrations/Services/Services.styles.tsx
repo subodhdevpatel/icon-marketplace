@@ -3,10 +3,10 @@ import styled from "styled-components";
 const Wrapper = styled.div`
     padding: 0 60px;
     width: 100%;
-    margin: 80px 0; 
+    margin: 80px 0;
 
     @media screen and (min-width: 1600px) {
-        margin: 100px 0; 
+        margin: 0;
         padding: 0 140px;
     }
     @media (max-width: 991px) {
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     }
 
 `
-const ServiceWrap = styled.div `
+const ServiceWrap = styled.div`
     background: #FAFAFA 0% 0% no-repeat padding-box;
     border-radius: 50px 0px;
     padding: 80px 62px;
@@ -29,11 +29,11 @@ const ServiceWrap = styled.div `
     }
     @media screen and (min-width: 1600px) {
         padding: 117px 62px;
-  
+
     }
 `
 const ContentWrap = styled.div`
-    
+
 
 
 `
@@ -42,15 +42,10 @@ const DesignService = styled.div`
 min-width: unset;
 margin-bottom: 42px;
 width: 100%;
-        @media (max-width: 767px) {
+        @media (max-width: 991px) {
             min-width: unset !important;
             margin-bottom: 24px;
             width: 100% !important;
-        }
-        @media screen and (max-width: 991px) {
-            min-width: 430px;
-            width: 430px;
-            margin-bottom: 24px;
         }
         @media (min-width: 1600px) {
             width: 577px;
@@ -58,7 +53,7 @@ width: 100%;
             h5 {
                 font: normal normal 600 20px/42px Poppins;
                     letter-spacing: -0.13px;
-                    color: #00CBD0; 
+                    color: #00CBD0;
             }
             h2 {
                 font: normal normal bold 68px/77px Poppins;
@@ -80,7 +75,7 @@ width: 100%;
         h5 {
             font: normal normal 600 18px/32px Poppins;
                 letter-spacing: -0.13px;
-                color: #00CBD0; 
+                color: #00CBD0;
         }
         h2 {
             font: normal normal bold 36px/57px Poppins;
@@ -102,7 +97,7 @@ width: 100%;
             h5 {
                 font: normal normal 600 16px/18px Poppins;
                     letter-spacing: -0.13px;
-                    color: #00CBD0; 
+                    color: #00CBD0;
             }
             h2 {
                 font: normal normal bold 24px/27px Poppins;
@@ -142,12 +137,14 @@ const BtnStorm = styled.button`
     border-radius: 8px;
     margin-top: 28px;
 `
-const ServiveAds = styled.div `
+const ServiceAds = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: center;
     img {
-        margin: 0 auto;
+        @media screen and (max-width: 991px) {
+            margin: 0 auto;
+        }
     }
     @media screen and (max-width: 991px) {
         flex-direction: column;
@@ -155,21 +152,21 @@ const ServiveAds = styled.div `
     }
 
 `
-const Testimonial = styled.div `
+const Testimonial = styled.div`
     @media screen and (max-width: 991px) {
         width: 100%;
     }
 `
-const ServiceContainer = styled.div `
-    display: flex; 
+const ServiceContainer = styled.div`
+    display: flex;
     @media screen and (max-width: 767px) {
         flex-direction: column;
         gap: 24px;
     }
 
-    
+
 `
-const Quote = styled.div `
+const Quote = styled.div`
     background: #FFFAE3 0% 0% no-repeat padding-box;
     border-radius: 60px 60px 0px 60px;
     opacity: 0.9;
@@ -187,7 +184,7 @@ const Quote = styled.div `
     }
 `
 
-const UserInfo = styled.div `
+const UserInfo = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -198,11 +195,6 @@ const UserInfo = styled.div `
         top: -45px;
         right: -35px;
     }
-    @media (min-width: 1199px) {
-        img {
-            margin: 0 auto;
-        }
-    }
     @media screen and (max-width: 991px) {
         padding-right: 0;
         justify-content: flex-end;
@@ -210,15 +202,16 @@ const UserInfo = styled.div `
         gap: 12px;
         img {
             position: unset;
+            margin: 0;
         }
     }
-`   
+`
 const UserText = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-contnet: center;
-    margin-top: 14px;   
+    justify-content: center;
+    margin-top: 14px;
     p {
         font-size: 11px;
         line-height: 15px;
@@ -228,7 +221,7 @@ const UserText = styled.div`
         opacity: 0.66;
     }
 `
-const ServiceBox = styled.div `
+const ServiceBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -241,11 +234,11 @@ const ServiceBox = styled.div `
         min-width: unset;
         width: 100%;
         h5 {
-            margin: 0 !important; 
+            margin: 0 !important;
         }
     }
     svg {
-        width: 45px; 
+        width: 45px;
         height: 45px;
     }
     h5 {
@@ -277,9 +270,14 @@ const ServiceBox = styled.div `
     }
     &:first-child {
         border-radius: 30px 0px 0px 30px;
+        border-right: none;
+        @media (max-width: 991px) {
+            margin-top: 24px;
+        }
     }
     &:last-child {
         border-radius: 0px 30px 30px 0px;
+        border-left: none;
     }
     @media screen and (max-width: 767px) {
         border-radius: 24px !important;
@@ -293,7 +291,7 @@ const Styles = {
     ServiceWrap,
     DesignService,
     ContentWrap,
-    ServiveAds,
+    ServiceAds,
     Testimonial,
     ServiceContainer,
     BtnStorm,
@@ -301,7 +299,7 @@ const Styles = {
     UserInfo,
     UserText,
     Quote
-    
+
 }
 
 export default Styles;

@@ -12,6 +12,10 @@ const Wrapper = styled.div`
         flex-direction: row;
 
     }
+    @media screen and (max-width: 1366px) {
+        padding: 50px 60px;
+        flex-direction: column;
+    }
     @media screen and (max-width: 1199px) {
         padding: 50px 60px;
         flex-direction: column;
@@ -23,7 +27,10 @@ const Wrapper = styled.div`
 `
 
 const WrapperLeft = styled.div`
-   flex: 1;
+   width: calc(100% - 376px);
+   @media (max-width: 1365px){
+    width: 100%;
+   }
 `
 
 const WrapperRight = styled.div`
@@ -102,6 +109,10 @@ const IconWrapper = styled.div`
     align-items: center;
     gap:20px;
     margin-bottom: 40px;
+    @media (max-width: 991px) {
+        gap: 15px;
+        margin-bottom: 24px;
+    }
 `
 
 const ImgWrap = styled.div`
@@ -178,7 +189,7 @@ const SubText = styled.h5`
     }
 `
 
-const UnlimateAccessWrapper = styled.div`
+const UltimateAccessWrapper = styled.div`
     display: flex;
     align-items: center;
     background: #3C8CF3 0% 0% no-repeat padding-box;
@@ -208,7 +219,7 @@ const ParaContent = styled.p`
     font-weight: 500;
     margin-bottom: 24px;
     @media (max-width: 767px) {
-        font-size: 14px; 
+        font-size: 14px;
     }
 `
 const CompareWrapper = styled.div`
@@ -241,8 +252,12 @@ const ImageContent = styled.div`
     @media (min-width: 1600px) {
         max-width: 590px;
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 1199px) {
         order: 0;
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
     }
 `
 
@@ -278,11 +293,17 @@ const CompatibleText = styled.div`
         font-size: 14px;
         letter-spacing: 0.13px;
         color: #7E7E7E;
+        margin-bottom: 3px;
     }
      p {
         font: normal normal medium 14px/21px Poppins;
         color: #000000;
         margin-bottom: 25px;
+        @media (max-width: 991px) {
+            font-size: 13px;
+            line-height: 18px;
+            margin-bottom: 12px;
+        }
      }
 `
 
@@ -322,7 +343,7 @@ const Styles = {
     ImageWrapper,
     DownloadWrapper,
     DownloadText,
-    UnlimateAccessWrapper,
+    UltimateAccessWrapper,
     ContentWrapper,
     IconWrapper,
     ImgWrap,

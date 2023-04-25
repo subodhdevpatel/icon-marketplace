@@ -1,29 +1,62 @@
+import { FC, useCallback, useMemo, useState } from "react";
+import { useRouter } from "next/router";
 import { ColorEditor } from "../ColorEditor/ColorEditor";
-
 import { PlaceHolder } from "./PlaceHolder";
+
 import { ColorOptions } from "../ColorEditor/Colors.data";
 
+import { ExpandIcon, CloseIcon, CheckIcon, UnlockIcon, PencilIcon, DownloadModalIcon, IconInfo, HeartIcon } from "assets/icons";
+
 import Styles from "./IllustrationDetailModal.styles";
-import { useCallback, useState } from "react";
-import { ExpandIcon, CloseIcon, CheckIcon, UnlockIcon, PencilIcon, DownloadModalIcon,IconInfo } from "assets/icons";
+import { IllustrationDetailModalType } from "./IllustrationDetailModal.types";
 
 /**
  * Component - IllustrationDetailModal
  */
-const IllustrationDetailModal = () => {
+export const IllustrationDetailModal: FC<IllustrationDetailModalType> = ({ name, tags, handleCloseModal }) => {
+  const router = useRouter()
   const [activeColor, setActiveColor] = useState(ColorOptions[0])
   const [imageType, setImageType] = useState('svg')
 
-  const downloadSvg = () => {
+  const features = useMemo(() => ([
+    'Download vector icons and illustrations',
+    'Control the size of exports assets',
+    'Manage your collection folders and team',
+    'Change color to match your brand'
+  ]), [])
+
+  const downloadSvg = useCallback(() => {
     const data = (document.getElementById('svgData')?.firstChild as HTMLElement)
-    console.log('data', data)
     const base64doc = btoa(unescape(encodeURIComponent(data.outerHTML)));
     const a = document.createElement('a');
     const e = new MouseEvent('click');
     a.download = `download.${imageType}`;
-    a.href = 'data:text/html;base64,' + base64doc;
-    a.dispatchEvent(e);
-  }
+    if (imageType === 'png') {
+      const canvas = document.createElement('canvas');
+
+      const w = parseInt(data.getAttribute('width') || '');
+      const h = parseInt(data.getAttribute('height') || '');
+
+      const downloadImage = document.createElement('img');
+      downloadImage.src = 'data:image/svg+xml;base64,' + base64doc;
+
+      downloadImage.onload = function () {
+        canvas.setAttribute('width', w.toString());
+        canvas.setAttribute('height', h.toString());
+        const context = canvas.getContext("2d");
+        context?.drawImage(downloadImage, 0, 0, w, h);
+        const dataURL = canvas.toDataURL('image/png');
+
+        a.href = dataURL;
+        a.dispatchEvent(e);
+      }
+
+    } else {
+      a.href = 'data:text/html;base64,' + base64doc;
+      a.dispatchEvent(e);
+    }
+
+  }, [imageType])
 
   const handleColorChange = useCallback((color: string) => {
     setActiveColor(color)
@@ -43,15 +76,15 @@ const IllustrationDetailModal = () => {
                 <span><strong>Illustrations</strong></span> <span> {'>'} </span>  <span>Essential illustrations</span>
               </Styles.BreadCrumb>
               <Styles.HeartIcon>
-                <PencilIcon />
+                <HeartIcon />
               </Styles.HeartIcon>
             </Styles.BreadCrumbContent>
-            <Styles.TitleWrapper>Success road</Styles.TitleWrapper>
+            <Styles.TitleWrapper>{name}</Styles.TitleWrapper>
             <ColorEditor handleColorChange={(color: string) => handleColorChange(color)} />
             <Styles.DownloadOptions>Download options</Styles.DownloadOptions>
             <Styles.MainWrap>
               <Styles.RadioWrap>
-                <Styles.RadioGroup type="radio" name="image_type" value='svg' onChange={() => setImageType('svg')} />
+                <Styles.RadioGroup type="radio" name="image_type" value='svg' defaultChecked onChange={() => setImageType('svg')} />
                 <Styles.Label>SVG <span>(editable vector)</span> </Styles.Label>
               </Styles.RadioWrap>
               <Styles.RadioWrap>
@@ -62,36 +95,28 @@ const IllustrationDetailModal = () => {
             </Styles.MainWrap>
             <Styles.Button onClick={downloadSvg}> <DownloadModalIcon /> Download</Styles.Button>
             <Styles.Tags>
-                <h5 className="text-base font-bold mb-2">Tags</h5>
-                <div className="flex flex-wrap gap-2">
-                  <span className="underline text-sm text-[#141414]">success </span>
-                  <span className="underline text-sm text-[#141414]">business </span>
-                  <span className="underline text-sm text-[#141414]">travel </span>
-                  <span className="underline text-sm text-[#141414]">exploration </span>
-                  <span className="underline text-sm text-[#141414]">creative </span>
-                  <span className="underline text-sm text-[#141414]">dream </span>
-                  <span className="underline text-sm text-[#141414]">man </span>
-                  <span className="underline text-sm text-[#141414]">happy </span>
-                  <span className="underline text-sm text-[#141414]">essential </span>
-                  <span className="underline text-sm text-[#141414]">competition </span>
-                </div>
+              <h5 className="text-base font-bold mb-2">Tags</h5>
+              <div className="flex flex-wrap gap-2 cursor-pointer">
+                {tags.map((tag, index) =>
+                  <span key={`${tag}-${index}`} onClick={() => router.push('/')} className="underline text-sm text-[#141414]">{tag} </span>
+                )}
+              </div>
             </Styles.Tags>
             <Styles.Information>
-            <IconInfo /> Commercial use license | Free PNG license attribution required
+              <IconInfo /> Commercial use license | Free PNG license attribution required
             </Styles.Information>
           </Styles.ContentWrapper>
         </Styles.WrapperLeft>
         <Styles.WrapperRight>
           <Styles.ButtonWrapper>
             <Styles.FullScreenButton><ExpandIcon /></Styles.FullScreenButton>
-            <Styles.CloseButton><CloseIcon /></Styles.CloseButton>
+            <Styles.CloseButton onClick={() => handleCloseModal()}><CloseIcon /></Styles.CloseButton>
           </Styles.ButtonWrapper>
           <Styles.DescriptionWrapper>
             <Styles.TitleText>Upgrade your free account to access these features</Styles.TitleText>
-            <Styles.DescriptionText><CheckIcon /> Download vector icons and illustrations</Styles.DescriptionText>
-            <Styles.DescriptionText><CheckIcon /> Control the size of exports assets</Styles.DescriptionText>
-            <Styles.DescriptionText><CheckIcon /> Manage your collection folders and team</Styles.DescriptionText>
-            <Styles.DescriptionText><CheckIcon /> Change color to match your brand</Styles.DescriptionText>
+            {features.map((feature, index) => (
+              <Styles.DescriptionText key={`${feature}-${index}`}><CheckIcon /> {feature}</Styles.DescriptionText>
+            ))}
           </Styles.DescriptionWrapper>
           <Styles.UnlockAllButton><UnlockIcon /> Unlock all features</Styles.UnlockAllButton>
         </Styles.WrapperRight>
@@ -99,5 +124,3 @@ const IllustrationDetailModal = () => {
     </Styles.PreviewWrapper>
   );
 };
-
-export default IllustrationDetailModal;
