@@ -11,6 +11,10 @@ yarn dev
 # or
 pnpm dev
 ```
+Create .env in root folder and add below content
+```bash
+NEXT_PUBLIC_BASE_API="https://api.vectopus.com/api"
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
