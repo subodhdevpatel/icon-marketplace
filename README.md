@@ -2,7 +2,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+Create .env in root folder and add below content
+```bash
+NEXT_PUBLIC_BASE_API="https://api.vectopus.com/api"
+```
+then, run the development server:
 
 ```bash
 npm run dev
@@ -10,10 +14,6 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-```
-Create .env in root folder and add below content
-```bash
-NEXT_PUBLIC_BASE_API="https://api.vectopus.com/api"
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
