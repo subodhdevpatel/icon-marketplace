@@ -8,7 +8,7 @@ const Wrapper = styled.div<WrapperType>`
   height: auto;
   border-radius: 10px;
   padding: 22px;
-   width: calc(25% - 24px);
+   width: calc(33.33% - 24px);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -19,9 +19,6 @@ const Wrapper = styled.div<WrapperType>`
         width: calc(25% - 24px);
     }
     @media (max-width: 1199px) {
-        width: calc(33.33% - 22px);
-    }
-    @media (max-width: 991px) {
         width: calc(50% - 16px);
     }
     @media (max-width: 767px) {
@@ -49,7 +46,7 @@ const Content = styled.div`
   align-items: center;
 `;
 
-const Title = styled.p`
+const Title = styled.div`
     font: normal bold 18px/26px Poppins;
     letter-spacing: 0.19px;
     color: #000000;
@@ -65,7 +62,7 @@ const Tag = styled.div`
 text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 195px;
+    max-width: 165px;
 `;
 
 const HeartIconWrapper = styled.div``;

@@ -5,7 +5,7 @@ import { WrapperType } from "./SampleIllustrationCard.types";
 const Wrapper = styled.div<WrapperType>`
   position: relative;
   box-sizing: border-box;
-  width: calc(25% - 24px);
+  width: calc(33.33% - 22px);
   height: auto;
   border-radius: 10px;
   padding: 22px 26px;
@@ -19,10 +19,7 @@ const Wrapper = styled.div<WrapperType>`
     width: calc(25% - 24px);
   }
   @media (max-width: 1199px) {
-      width: calc(33.33% - 22px);
-  }
-  @media (max-width: 991px) {
-      width: calc(50% - 16px);
+  width: calc(50% - 16px);
   }
   @media (max-width: 767px) {
       width: 100%;
@@ -45,7 +42,7 @@ white-space: nowrap;
 @media (min-width: 1600px) {
     font: normal bold 20px/28px Poppins;
 }
-@media screen (max-width: 991px) {
+@media (max-width: 991px) {
     font: normal bold 16px/22px Poppins;
 }
 `;

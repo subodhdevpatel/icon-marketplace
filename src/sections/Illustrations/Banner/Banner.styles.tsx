@@ -43,7 +43,7 @@ const WrapperRight = styled.div`
     top: 0;
     z-index: 9;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 1365px) {
      max-width: 100%;
      margin-top: 24px;
      width: 100%;
@@ -249,6 +249,7 @@ const ServicerWrap = styled.div`
 
 const ImageContent = styled.div`
     max-width: 390px;
+    margin-bottom: 24px;
     @media (min-width: 1600px) {
         max-width: 590px;
     }

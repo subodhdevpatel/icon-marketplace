@@ -13,7 +13,7 @@ import { IllustrationDetailModalType } from "./IllustrationDetailModal.types";
 /**
  * Component - IllustrationDetailModal
  */
-export const IllustrationDetailModal: FC<IllustrationDetailModalType> = ({ name, tags, handleCloseModal }) => {
+export const IllustrationDetailModal: FC<IllustrationDetailModalType> = ({ name, tags, isLiked, handleCloseModal }) => {
   const router = useRouter()
   const [activeColor, setActiveColor] = useState(ColorOptions[0])
   const [imageType, setImageType] = useState('svg')
@@ -76,7 +76,7 @@ export const IllustrationDetailModal: FC<IllustrationDetailModalType> = ({ name,
                 <span><strong>Illustrations</strong></span> <span> {'>'} </span>  <span>Essential illustrations</span>
               </Styles.BreadCrumb>
               <Styles.HeartIcon>
-                <HeartIcon />
+                <HeartIcon fill={isLiked ? "red" : undefined}/>
               </Styles.HeartIcon>
             </Styles.BreadCrumbContent>
             <Styles.TitleWrapper>{name}</Styles.TitleWrapper>

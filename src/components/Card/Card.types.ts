@@ -9,3 +9,7 @@ export type CardType = {
     isLiked: boolean
     handleLiked: (id: string) => void
 }
+
+export type CardWraperType = {
+    modalVisible: boolean
+}

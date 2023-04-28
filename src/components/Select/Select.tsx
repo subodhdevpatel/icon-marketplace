@@ -29,11 +29,11 @@ export const Select: FC<SelectType> = ({ options, handleSelect, showIcon = true 
 
     return (
         <Styles.Wrapper ref={ref}>
-            <Styles.TitleWrapper onClick={() => setShowOptions(true)}>
+            <Styles.TitleWrapper onClick={() => setShowOptions((prev) => !prev)}>
                 <Styles.Title>Asset Library</Styles.Title>
                 <ArrowIcon stroke="black" />
             </Styles.TitleWrapper>
-            {showOptions && <Styles.OptionsWrapper onMouseLeave={() => setShowOptions(true)}>
+            {showOptions && <Styles.OptionsWrapper onMouseLeave={() => setShowOptions((true))}>
                 {options.map(({ id, name, icon }) => (
                     <Styles.Option key={id} onClick={() => onSelect(id)}>
                         {showIcon && icon}

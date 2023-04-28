@@ -20,7 +20,7 @@ const Card: FC<CardType> = ({ id, name, image, modalVisible, tags, isLiked, hand
 
     return (
         <>
-            <CardStyles.CardWrapper onClick={() => handleClick(id)}>
+            <CardStyles.CardWrapper modalVisible={modalVisible} onClick={() => handleClick(id)}>
                 <CardStyles.HeartIconWrapper onClick={handleLikedClick}>
                     <HeartIcon fill={isLiked ? "red" : undefined} />
                 </CardStyles.HeartIconWrapper>
@@ -29,7 +29,7 @@ const Card: FC<CardType> = ({ id, name, image, modalVisible, tags, isLiked, hand
                 </CardStyles.ImageWrapper>
                 <CardStyles.ImageTitle>{name}</CardStyles.ImageTitle>
             </CardStyles.CardWrapper>
-            {modalVisible && <IllustrationDetailModal name={name} tags={tags} handleCloseModal={handleCloseModal} />}
+            {modalVisible && <IllustrationDetailModal name={name} isLiked={isLiked} tags={tags} handleCloseModal={handleCloseModal} />}
         </>
     )
 }

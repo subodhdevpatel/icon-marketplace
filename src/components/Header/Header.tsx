@@ -1,7 +1,10 @@
 import Image from 'next/image'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef, MutableRefObject } from 'react'
 import { useRouter } from 'next/router'
 import { Select } from "components/Select/Select"
+import {MobileHeader} from './MobileHeader'
+import {useWindowSize} from 'usehooks-ts'
+import { useOnClickOutside } from "hooks/useOnClickOutside"
 import { AssetLibraryOptions } from './data'
 import Logo from 'assets/images/Logo.png'
 import { SearchIcon, AssetsLib } from 'assets/icons'
@@ -11,8 +14,17 @@ import Styles from "./Header.styles"
  * Component - Header
  */
 export const Header = () => {
+    const size = useWindowSize()
+    const isMobile = size.width <= 991;
     const router = useRouter()
     const [isSearchOpen, setIsSearchOpen] = useState(false)
+    const ref = useRef() as MutableRefObject<HTMLDivElement>;
+
+    const onClose = useCallback(() => {
+        setIsSearchOpen(false)
+    }, [])
+
+    useOnClickOutside(ref, onClose)
 
     const handleSearchClick = useCallback(
         () => {
@@ -22,12 +34,13 @@ export const Header = () => {
     )
 
     return (
-        <Styles.Wrapper>
+        <Styles.Wrapper ref={ref}>
             <Styles.ContentWrapper>
                 <Styles.LogoContainer>
                     <Image src={Logo} alt="" onClick={() => router.push('/')} />
                 </Styles.LogoContainer>
-                {isSearchOpen && (
+                {isMobile && <MobileHeader />}
+                {isSearchOpen && !isMobile && (
                     <Styles.SearchBar>
                         <Styles.SearchInput type="text" placeholder="Search" />
                         <Styles.NavItem>
@@ -42,7 +55,7 @@ export const Header = () => {
                 )}
             </Styles.ContentWrapper>
 
-            <Styles.LinksContainer>
+            {!isMobile && <Styles.LinksContainer>
                 <Styles.NavItem onClick={handleSearchClick}>
                     <SearchIcon /> Search
                 </Styles.NavItem>
@@ -56,7 +69,7 @@ export const Header = () => {
                 <Styles.NavItem> Custom design</Styles.NavItem>
                 <Styles.NavItem>Updates</Styles.NavItem>
                 <Styles.SignInButton>Sign in</Styles.SignInButton>
-            </Styles.LinksContainer>
+            </Styles.LinksContainer>}
         </Styles.Wrapper >
     )
 }
